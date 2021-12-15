@@ -18,6 +18,13 @@ body {
   /*background-color: #5dcae7;*/
 }
 
+.container {
+  width: 90%;
+  color: #5dcae7;
+  background-color: #5dcae7;
+  text-align: center;
+  margin: 0 auto;
+}
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
