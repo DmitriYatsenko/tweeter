@@ -4,7 +4,7 @@
     background-color: #5dcae7;
     flex: 1;
     font-size: 20px;
-    font-family: 'Bungee', Courier, monospace;
+    font-family: 'Courier New', Courier, monospace;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 10px;
@@ -22,4 +22,51 @@
     border-bottom: 1px solid;
     width: 400px;
     height: 50px;
+}
+
+.postedtweet {
+    background-color: #5dcae7;
+    border: none;
+    border-bottom: 1px solid;
+    width: 400px;
+    height: 50px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+article {
+  border: 1px solid black;
+}
+
+article > header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+article > footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.button {
+    width: 400px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.posted {
+  width: 500px;
+  color: #000000;
+  background-color: #5dcae7;
+  flex: 1;
+  font-size: 20px;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  margin: 0 auto;
 }
