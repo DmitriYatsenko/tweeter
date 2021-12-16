@@ -4,7 +4,8 @@ body {
 
 .navbar {
     display: flex;
-    /* position: relative; */
+    position: fixed;
+    width: 100%;
     justify-content: space-between;
 }
 

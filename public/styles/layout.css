@@ -10,20 +10,16 @@ html {
   box-sizing: inherit;
 }
 
-/*
- * Global layout stuff
- */
-
-body {
-  /*background-color: #5dcae7;*/
-}
-
 .container {
-  width: 90%;
+  width: 75%;
   color: #5dcae7;
   background-color: #5dcae7;
   text-align: center;
   margin: 0 auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions

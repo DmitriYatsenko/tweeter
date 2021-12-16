@@ -1,5 +1,5 @@
 .tweets {
-    width: 400px;
+    width: 100%;
     color: #000000;
     background-color: #5dcae7;
     flex: 1;
@@ -20,7 +20,7 @@
     background-color: #5dcae7;
     border: none;
     border-bottom: 1px solid;
-    width: 400px;
+    width: 100%;
     height: 50px;
 }
 
@@ -28,7 +28,7 @@
     background-color: #5dcae7;
     border: none;
     border-bottom: 1px solid;
-    width: 400px;
+    width: 100%;
     height: 50px;
     margin: 0 auto;
     display: flex;
@@ -45,6 +45,22 @@ article > header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+}
+
+article > header img {
+    margin-right: 0.5em;
+}
+
+.tweet-header-profile {
+    margin-left: 5px;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.handle {
+    margin-right: 5px;
 }
 
 article > footer {
@@ -53,15 +69,23 @@ article > footer {
     justify-content: space-between;
 }
 
+.d8 {
+    margin: 5px;
+}
+
+.icons {
+    margin: 5px;
+}
+
 .button {
-    width: 400px;
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
 .posted {
-  width: 500px;
+  width: 100%;
   color: #000000;
   background-color: #5dcae7;
   flex: 1;
@@ -69,4 +93,5 @@ article > footer {
   font-family: 'Courier New', Courier, monospace;
   text-align: center;
   margin: 0 auto;
+  margin-bottom: 10px;
 }

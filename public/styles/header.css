@@ -1,4 +1,6 @@
 body > header {
+    padding-top: 200px;
+    padding-bottom: 10px;
     background-image: url('../images/blue.jpg');
     min-height: 400px;
     width: 100%;
@@ -8,6 +10,12 @@ body > header {
 }
 
 h2 {
+    color: #000000;
+    font-size: 40px;
+    font-family: Courier, monospace;
+}
+
+h3 {
     color: #ffffff;
     font-size: 40px;
     font-family: Courier, monospace;
