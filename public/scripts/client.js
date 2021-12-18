@@ -43,12 +43,17 @@ $(document).ready(function () {
     $("#new-tweet-form").submit(function (event) {
         event.preventDefault();
         const textValue = $('#tweet-text').val();
+        let htmlTags = textValue.includes('<') && !textValue.includes('< ');
+        let tooLong = textValue.length > 140;
+        let empty = textValue === '';
 
-        if (textValue.includes("<") && !textValue.includes("< ")) {
-            $('.error-text').text('Must not contain HTML tags');
-        } else if (textValue.length > 140) {
+        if (htmlTags && tooLong) {
+            $('.error-text').text('Must be 140 characters or less & not contain HTML tags');
+        } else if (!htmlTags && tooLong) {
             $('.error-text').text('Must be 140 characters or less');
-        } else if (textValue === '') {
+        } else if (htmlTags && !tooLong) {
+            $('.error-text').text('Must not contain HTML tags');
+        } else if (empty) {
             $('.error-text').text('Must not be empty');
         } else {
             $('.error-text').text('');
