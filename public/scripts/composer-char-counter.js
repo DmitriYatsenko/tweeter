@@ -9,12 +9,4 @@ $(document).ready(function () {
         }
         $('#counter').text(remainingChars - wordLength);
     })
-
-    $('.posted').mouseover(function () {
-        $(this).css('box-shadow', '5px 5px 2px #0f0f0f');
-    });
-
-    $('.posted').mouseout(function () {
-        $(this).css('box-shadow', 'none');
-    });
 });

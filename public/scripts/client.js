@@ -1,67 +1,64 @@
 $(document).ready(function () {
 
-const data = [
-    {
-        "user": {
-            "name": "Newton",
-            "avatars": "https://i.imgur.com/73hZDYK.png"
-            ,
-            "handle": "@SirIsaac"
-        },
-        "content": {
-            "text": "If I have seen further it is by standing on the shoulders of giants"
-        },
-        "created_at": 1461116232227
-    },
-    {
-        "user": {
-            "name": "Descartes",
-            "avatars": "https://i.imgur.com/nlhLi3I.png",
-            "handle": "@rd"
-        },
-        "content": {
-            "text": "Je pense , donc je suis"
-        },
-        "created_at": 1461113959088
+    const loadTweets = function () {
+        $.ajax('/tweets', { method: 'GET' })
+            .then(function (tweets) {
+                renderTweets(tweets);
+            });
     }
-]
 
-const createTweetElement = function (tweet) {
-    const date = timeago.format(tweet.created_at);
-    return `
-    <section class="posted">
-    <article>
-      <header class="tweet-header">
-        <div class="tweet-header-profile">
-          <img src="${tweet.user.avatars}">
-          <span>${tweet.user.name}</span>
-        </div>
-        <div class="handle">${tweet.user.handle}</div>
-      </header>
-      <div class='postedtweet'>${tweet.content.text}</div>
-      <footer>
-        <div class="d8">${date}</div>
-        <div class="icons">
-          <i class="fas fa-flag"></i>
-          <i class="fas fa-retweet"></i>
-          <i class="fas fa-heart"></i>
-        </div>
-      </footer>
-    </article>
-  </section>
-    `
-}
+    loadTweets();
 
-const renderTweets = function (tweets) {
-    console.log(tweets);
-    // loops through tweets
-    // takes return value and appends it to the tweets container
-    for (let tweet of tweets) {
-        // calls createTweetElement for each tweet
-        $('#tweets-container').append(createTweetElement(tweet));
-        console.log('i');
+    const createTweetElement = function (tweet) {
+        const date = timeago.format(tweet.created_at);
+        return `
+            <article class="posted">
+                <header class="tweet-header">
+                    <div class="tweet-header-profile">
+                    <img src="${tweet.user.avatars}">
+                    <span>${tweet.user.name}</span>
+                    </div>
+                    <div class="handle">${tweet.user.handle}</div>
+                </header>
+                <div class='postedtweet'>${tweet.content.text}</div>
+                <footer>
+                    <div class="d8">${date}</div>
+                    <div class="icons">
+                    <i class="fas fa-flag"></i>
+                    <i class="fas fa-retweet"></i>
+                    <i class="fas fa-heart"></i>
+                    </div>
+                </footer>
+            </article>
+        `
     }
-}
 
-renderTweets(data);
+    const renderTweets = function (tweets) {
+        $('#tweets-container').empty();
+        for (let tweet of tweets) {
+            $('#tweets-container').append(createTweetElement(tweet));
+        }
+    }
+
+    $("#new-tweet-form").submit(function (event) {
+        event.preventDefault();
+        const textValue = $('#tweet-text').val();
+
+        if (textValue.includes("<") && !textValue.includes("< ")) {
+            $('.error-text').text('Must not contain HTML tags');
+        } else if (textValue.length > 140) {
+            $('.error-text').text('Must be 140 characters or less');
+        } else if (textValue === '') {
+            $('.error-text').text('Must not be empty');
+        } else {
+            $('.error-text').text('');
+            const d8a = $(this).serialize();
+            $.ajax('/tweets', { method: 'POST', data: d8a })
+                .then(function () {
+                    $("#new-tweet-form")[0].reset();
+                    $("#counter").text('140');
+                    loadTweets();
+                })
+        }
+    });
 });
