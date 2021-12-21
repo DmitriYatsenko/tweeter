@@ -9,9 +9,29 @@ html {
 *, *:before, *:after {
   box-sizing: inherit;
 }
+body {
+  background-color: #009ac5;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+}
 
+.nav69, .header69, .container {
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .nav69 {
+    width: 100%;
+  }
+  .header69 {
+    width: 50%;
+  }
+  .container {
+    width: 50%;
+  }
+}
 .container {
-  width: 75%;
   color: #5dcae7;
   background-color: #5dcae7;
   text-align: center;
@@ -21,6 +41,3 @@ html {
   padding-left: 10px;
   padding-right: 10px;
 }
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */

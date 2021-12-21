@@ -1,7 +1,3 @@
-body {
-    background-color: #009ac5;
-}
-
 .navbar {
     display: flex;
     position: fixed;
@@ -10,6 +6,7 @@ body {
 }
 
 .title {
+    width: 50%;
     color: #fa5a02;
     background-color: #5dcae7;
     flex: 1;
@@ -24,6 +21,7 @@ body {
 }
 
 .text {
+    width: 50%;
     color: #ffffff;
     background-color: #007bff;
     flex: 1;
