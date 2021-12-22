@@ -20,7 +20,7 @@ $(document).ready(function () {
                     </div>
                     <div class="handle">${tweet.user.handle}</div>
                 </header>
-                <div class='postedtweet'><span style="word-wrap:break-word; display:inline-block;">${tweet.content.text}</span></div>
+                <div class='postedtweet'><span style="word-wrap:break-word; overflow:auto">${tweet.content.text}</span></div>
                 <footer>
                     <div class="d8">${date}</div>
                     <div class="icons">
