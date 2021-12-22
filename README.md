@@ -19,8 +19,18 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Final Product
 
-!["screenshot "](https://github.com/DmitriYatsenko/tinyapp/blob/master/docs/urls.JPG)
+!["screenshot showing character count"](https://github.com/DmitriYatsenko/tweeter/blob/master/docs/charCounter0.JPG)
 
-!["screenshot "](https://github.com/DmitriYatsenko/tinyapp/blob/master/docs/urls-own-shortURL.JPG)
+!["screenshot showing negative character count & error message if length exceeds 140 characters"](https://github.com/DmitriYatsenko/tweeter/blob/master/docs/charCounter1.JPG)
 
-!["screenshot "](https://github.com/DmitriYatsenko/tinyapp/blob/master/docs/urls-someone-elses-shortURL.JPG)
+!["screenshot showing error message if text contains HTML tags"](https://github.com/DmitriYatsenko/tweeter/blob/master/docs/charCounter2.JPG)
+
+!["screenshot showing both of the above errors if both of the above conditions are violated"](https://github.com/DmitriYatsenko/tweeter/blob/master/docs/charCounter3.JPG)
+
+!["screenshot showing error message if one attempts to post empty tweet"](https://github.com/DmitriYatsenko/tweeter/blob/master/docs/charCounter4.JPG)
+
+!["screenshot showing desktop layout"](https://github.com/DmitriYatsenko/tweeter/blob/master/docs/screenBig.JPG)
+
+!["screenshot showing mobile layout"](https://github.com/DmitriYatsenko/tweeter/blob/master/docs/screenSmall.JPG)
+
+!["screenshot showing posted tweets fitting within the boxes, as well as a box shadow around the tweet the cursor is pointing at"](https://github.com/DmitriYatsenko/tweeter/blob/master/docs/textWrap.jpg)
