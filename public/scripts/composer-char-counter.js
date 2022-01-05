@@ -8,12 +8,15 @@ $(document).ready(function () {
 
         if (htmlTags && tooLong) {
             $('.error-text').text('Must be 140 characters or less & not contain HTML tags');
+            $('.error-text').css({ color: 'red' });
             $('#counter').css({ color: 'red' });
         } else if (!htmlTags && tooLong) {
             $('.error-text').text('Must be 140 characters or less');
+            $('.error-text').css({ color: 'red' });
             $('#counter').css({ color: 'red' });
         } else if (htmlTags && !tooLong) {
             $('.error-text').text('Must not contain HTML tags');
+            $('.error-text').css({ color: 'red' });
             $('#counter').css({ color: 'black' });
         } else {
             $('.error-text').text('');
