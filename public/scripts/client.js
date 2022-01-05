@@ -36,6 +36,7 @@ $(document).ready(function () {
     const renderTweets = function (tweets) {
         $('#tweets-container').empty();
         for (let tweet of tweets) {
+            // reverse chronological order: prepend instead of append
             $('#tweets-container').prepend(createTweetElement(tweet));
         }
     }
@@ -48,14 +49,44 @@ $(document).ready(function () {
         let empty = textValue === '';
 
         if (htmlTags && tooLong) {
+            // Display error message & character counter in red if tweet is too long & contains HTML tags
             $('.error-text').text('Must be 140 characters or less & not contain HTML tags');
+
+            // Error message disappears after 2 seconds
+            setTimeout(() => {
+                $('.error-text').text('');
+            }, 2000);
+
         } else if (!htmlTags && tooLong) {
+            // Display character counter in red if tweet is too long
             $('.error-text').text('Must be 140 characters or less');
+
+            // Error message disappears after 2 seconds
+            setTimeout(() => {
+                $('.error-text').text('');
+            }, 2000);
+
         } else if (htmlTags && !tooLong) {
+            // Display error message in red if tweet contains HTML tags
             $('.error-text').text('Must not contain HTML tags');
+
+            // Error message disappears after 2 seconds
+            setTimeout(() => {
+                $('.error-text').text('');
+            }, 2000);
+
         } else if (empty) {
+            // Display error message in red if user attempts to post empty tweet
             $('.error-text').text('Must not be empty');
+            $('.error-text').css({ color: 'red' });
+
+            // Error message disappears after 2 seconds
+            setTimeout(() => {
+                $('.error-text').text('');
+            }, 2000);
+
         } else {
+            // No error message if no error
             $('.error-text').text('');
             const d8a = $(this).serialize();
             $.ajax('/tweets', { method: 'POST', data: d8a })
