@@ -98,3 +98,15 @@ article > footer {
 .posted:hover {
     box-shadow: 5px 5px 2px #0f0f0f;
 }
+
+.fas-fa-flag:hover {
+    color: red;
+}
+
+.fas-fa-retweet:hover {
+    color: red;
+}
+
+.fas-fa-heart:hover {
+    color: red;
+}

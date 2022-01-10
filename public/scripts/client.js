@@ -24,9 +24,9 @@ $(document).ready(function () {
                 <footer>
                     <div class="d8">${date}</div>
                     <div class="icons">
-                    <i class="fas fa-flag"></i>
-                    <i class="fas fa-retweet"></i>
-                    <i class="fas fa-heart"></i>
+                    <i class="fas-fa-flag"></i>
+                    <i class="fas-fa-retweet"></i>
+                    <i class="fas-fa-heart"></i>
                     </div>
                 </footer>
             </article>
